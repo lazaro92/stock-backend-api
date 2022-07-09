@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stock', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_id')->unique();
+            $table->unsignedInteger('quantity')->default(0);
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
