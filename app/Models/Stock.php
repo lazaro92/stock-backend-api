@@ -13,6 +13,6 @@ class Stock extends Model
     //protected $primaryKey = 'id';
 
     public function product() {
-        return $this->hasOne(Product::class);
+        return $this->belongsTo(Product::class);
     }
 }
