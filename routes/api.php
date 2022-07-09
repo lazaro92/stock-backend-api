@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/stock', [StockController::class, 'show']);
 Route::get('/stock/{code}', [StockController::class, 'find']);
+Route::post('/stock', [StockController::class, 'insert']);
