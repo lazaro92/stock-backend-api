@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OperationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/product', [ProductController::class, 'show']);
 Route::get('/product/{code}', [ProductController::class, 'find']);
 Route::post('/product', [ProductController::class, 'insert']);
+
+Route::post('/operation/buy/{code}', [OperationController::class, 'buyProduct']);

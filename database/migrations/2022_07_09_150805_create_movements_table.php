@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('movements', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_id');
+            $table->string('operation', 10);
+            $table->unsignedInteger('quantity');
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products');
+
         });
     }
 
