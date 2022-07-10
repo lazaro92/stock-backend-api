@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Http\Repositories\ProductRepository;
 use App\Http\Requests\ProductRequest;
+use App\Models\Product;
+
 
 class ProductController extends Controller {
     private $productRepository;
@@ -39,12 +42,14 @@ class ProductController extends Controller {
     public function insert(ProductRequest $request) {
         $bodyContent = $request->all(); 
 
-        $product = $this->productRepository->insert(
-            $bodyContent['code'],
-            $bodyContent['name'],
-            $bodyContent['price'],
-            $bodyContent['quantity'] ?? 0,
-        );
+        $product = new Product();
+
+        $product->code =  $bodyContent['code'];
+        $product->name =  $bodyContent['name'];
+        $product->price = $bodyContent['price'];
+        $product->quantity = $bodyContent['quantity'] ?? 0;
+
+        $product = $this->productRepository->insert($product);        
 
         return $product;
     }

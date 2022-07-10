@@ -28,8 +28,10 @@ class OperationController extends Controller
         if (!$product) {
             return response()->json([ 'message' => 'no product found for the code ' . $code], 404);
         }
+
+        $product->quantity += $quantity;
         
-        $this->productRepository->addQuantity($product, $quantity);
+        $this->productRepository->insert($product);
         $this->movementRepository->insert($product, 'BUY', $quantity);
         
         return response()->json(['message' => 'Buy operation realized']);

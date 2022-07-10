@@ -14,22 +14,7 @@ class ProductRepository
         return Product:: where('code', $code)->first();
     }
 
-    public function insert($code, $name, $price, $quantity=0) {
-        $product = new Product();
-
-        $product->code     = $code;
-        $product->name     = $name;
-        $product->price    = $price;
-        $product->quantity = $quantity;
-
-        $product->save();
-
-        return $product;
-    }
-
-    public function addQuantity($product, $quantity=0) {
-        $product->quantity += $quantity;
-
+    public function insert(Product $product) {
         $product->save();
 
         return $product;
