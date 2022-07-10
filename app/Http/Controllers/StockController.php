@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Repositories\StockRepository;
 use App\Http\Repositories\ProductRepository;
+use App\Http\Requests\StockRequest;
 
 class StockController extends Controller
 {
@@ -40,7 +41,7 @@ class StockController extends Controller
         return $stock;
     }
 
-    public function insert(Request $request) {
+    public function insert(StockRequest $request) {
         $bodyContent = $request->all(); 
 
         $product = $this->productRepository->insert(
@@ -50,7 +51,8 @@ class StockController extends Controller
         );
 
         if ($product) {
-            return $this->stockRepository->insert($product->id, $bodyContent['quantity']);
+            $quantity = ($bodyContent['quantity']) ?? 0;
+            return $this->stockRepository->insert($product->id, $quantity);
         }
     }
 }
