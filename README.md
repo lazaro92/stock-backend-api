@@ -47,4 +47,4 @@ GET | api/product/{code}  | Search by product code and return it if exist, eithe
 POST | api/product | Insert a product in the dabase. Needs **code**, **name**, **price** in the body as JSON. **quantity** is optional.
 POST | api/operation/buy/{code} | if a product is found, add the demanded stock quantity to it and register the move in the **movements** table.
 
-A POSTMAN collection is available in the repo -> [API-Stock.postman_collection.json](https://github.com/lazaro92/stock-backend-api/blob/main/API-Stock.postman_collection.json)
+A POSTMAN collection is available in the repo -> [API-Stock.postman_collection.json](https://github.com/lazaro92/stock-backend-api/blob/main/API-Stock.postman_collection.json).
