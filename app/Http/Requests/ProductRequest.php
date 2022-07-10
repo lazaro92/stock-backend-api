@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class StockRequest extends FormRequest
+class ProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,7 @@ class StockRequest extends FormRequest
         return [
             'name'      => 'bail|required|string|min:3',
             'code'      => 'bail|required|numeric|unique:App\Models\Product,code',
-            'price'     => 'numeric',
+            'price'     => 'bail|required|numeric',
             'quantity'  => 'numeric',
         ];
     }

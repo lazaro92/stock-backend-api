@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('code')->unique();
             $table->decimal('price',10,2)->default(0);
+            $table->unsignedInteger('quantity')->default(0);
             $table->timestamps();
         });
     }

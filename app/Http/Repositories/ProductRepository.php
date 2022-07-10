@@ -6,16 +6,25 @@ use App\Models\Product;
 
 class ProductRepository 
 {
-    public function insert($name, $code, $price=0) {
+    public function getAll() {
+        return Product::paginate(15);
+    }
+
+    public function findByCode($code) {
+        return Product:: where('code', $code) ->get();
+    }
+
+    public function insert($code, $name, $price, $quantity=0) {
         $product = new Product();
-        $product->name  = $name;
-        $product->code  = $code;
-        $product->price = $price;
+
+        $product->code     = $code;
+        $product->name     = $name;
+        $product->price    = $price;
+        $product->quantity = $quantity;
 
         $product->save();
 
         return $product;
     }
 }
-
 
