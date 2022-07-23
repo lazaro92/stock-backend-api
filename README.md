@@ -46,3 +46,9 @@ GET | api/product | Returns a limited page with the product data.
 GET | api/product/{code}  | Search by product code and return it if exist, either return 404.
 POST | api/product | Insert a product in the dabase. Needs **code**, **name**, **price** in the body as JSON. **quantity** is optional.
 POST | api/operation/buy/{code} | if a product is found, add the demanded stock quantity to it and register the move in the **movements** table.
+
+A POSTMAN collection is available in the repo -> [API-Stock.postman_collection.json](API-Stock.postman_collection.json).
+
+## Wiki
+
+A wiki has been added to this project. See it in the **Wiki tab**.
