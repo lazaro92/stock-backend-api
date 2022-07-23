@@ -33,7 +33,7 @@ class ProductController extends Controller {
 
         $product = $this->productRepository->findByCode($code);
     
-        if ($product->isEmpty()) {
+        if (!$product) {
             return response()->json([ 'message' => 'no product found for the code ' . $code], 404);
         }
         return $product;
@@ -45,6 +45,25 @@ class ProductController extends Controller {
         $product = new Product();
 
         $product->code =  $bodyContent['code'];
+        $product->name =  $bodyContent['name'];
+        $product->price = $bodyContent['price'];
+        $product->quantity = $bodyContent['quantity'] ?? 0;
+
+        $product = $this->productRepository->insert($product);        
+
+        return $product;
+    }
+
+    public function update(Request $request) {
+        $code = $request->code; 
+        $bodyContent = $request->all(); 
+
+        $product = $this->productRepository->findByCode($code);
+    
+        if (!$product) {
+            return response()->json([ 'message' => 'no product found for the code ' . $code], 404);
+        }
+
         $product->name =  $bodyContent['name'];
         $product->price = $bodyContent['price'];
         $product->quantity = $bodyContent['quantity'] ?? 0;
