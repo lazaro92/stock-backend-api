@@ -13,7 +13,7 @@ The basic operations it must have are:
 - [x] Save buy stock movement.
 - [x] Save sell stock movement.
 - [ ] Save cancel sell stock movement.
-- [ ] Check the movements.
+- [x] Check the movements.
 
 Additional:
 
@@ -42,8 +42,10 @@ To execute the project you should follow next steps:
 
 Method  | Route | Description
 ------------- | ------------- | -------------
-GET | api/product | Returns a limited page with the product data.
+GET | api/product | Returns a limited page with the products data.
 GET | api/product/{code}  | Search by product code and return it if exist, either return 404.
+GET | api/movement | Returns a limited page with the movements data.
+GET | api/movement/{id}  | Search by movement id and return it if exist, either return 404.
 POST | api/product | Insert a product in the dabase. Needs **code**, **name**, **price** in the body as JSON. **quantity** is optional.
 PUT | api/product | Update a product (found by code) in the dabase.
 POST | api/operation/buy/{code} | if a product is found, add the demanded stock quantity to it and register the move in the **movements** table.
