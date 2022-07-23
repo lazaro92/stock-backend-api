@@ -57,7 +57,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Gafas de sol 2\",\n    \"code\": 1753136,\n    \"price\": 100.00\n}",
+					"raw": "{\n    \"name\": \"Perla\",\n    \"code\": 1753135,\n    \"price\": 300.00\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -77,6 +77,38 @@
 						"api",
 						"product",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Perla2\",\n    \"price\": 200.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/product/1753135",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"1753135"
 					]
 				}
 			},
@@ -110,6 +142,84 @@
 						"operation",
 						"buy",
 						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Operation SELL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quantity\": 20,\n    \"money\": 1000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/operation/sell/123456",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"operation",
+						"sell",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/movement",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"movement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movement By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/movement/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"movement",
+						"1"
 					]
 				}
 			},
