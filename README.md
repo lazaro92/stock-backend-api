@@ -6,7 +6,7 @@ The basic operations it must have are:
 
 - [x] Regist stock.
 - [x] Check stock (all or find by product code).
-- [ ] Update stock (product detail).
+- [x] Update stock (product detail).
 - [x] Operations: buy stock.
 - [x] Operations: sell stock.
 - [ ] Operations: cancel sell stock.
@@ -45,6 +45,7 @@ Method  | Route | Description
 GET | api/product | Returns a limited page with the product data.
 GET | api/product/{code}  | Search by product code and return it if exist, either return 404.
 POST | api/product | Insert a product in the dabase. Needs **code**, **name**, **price** in the body as JSON. **quantity** is optional.
+PUT | api/product | Update a product (found by code) in the dabase.
 POST | api/operation/buy/{code} | if a product is found, add the demanded stock quantity to it and register the move in the **movements** table.
 POST | api/operation/sell/{code} | if a product is found, and the demanded quantity is less than the stock, and the money is more than the price, remove the demanded stock quantity to it and register the move in the **movements** table.
 
