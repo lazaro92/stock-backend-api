@@ -7,7 +7,11 @@ use App\Models\Movement;
 class MovementRepository 
 {
     public function getAll() {
-        return Product::paginate(15);
+        return Movement::paginate(15);
+    }
+
+    public function findById($id) {
+        return Movement::find($id);
     }
 
     public function insert($product, $operation, $quantity=0) {

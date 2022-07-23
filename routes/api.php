@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MovementController;
 use App\Http\Controllers\OperationController;
 
 /*
@@ -25,6 +26,9 @@ Route::get('/product',        [ProductController::class, 'show']);
 Route::get('/product/{code}', [ProductController::class, 'find']);
 Route::post('/product',       [ProductController::class, 'insert']);
 Route::put('/product/{code}',  [ProductController::class, 'update']);
+
+Route::get('/movement',        [MovementController::class, 'show']);
+Route::get('/movement/{id}', [MovementController::class, 'find']);
 
 Route::post('/operation/buy/{code}',  [OperationController::class, 'buyProduct']);
 Route::post('/operation/sell/{code}', [OperationController::class, 'sellProduct']);
