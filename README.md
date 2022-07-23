@@ -11,7 +11,7 @@ The basic operations it must have are:
 - [x] Operations: sell stock.
 - [ ] Operations: cancel sell stock.
 - [x] Save buy stock movement.
-- [ ] Save sell stock movement.
+- [x] Save sell stock movement.
 - [ ] Save cancel sell stock movement.
 - [ ] Check the movements.
 
