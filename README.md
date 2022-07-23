@@ -6,9 +6,9 @@ The basic operations it must have are:
 
 - [x] Regist stock.
 - [x] Check stock (all or find by product code).
-- [ ] Update tock (product detail).
+- [ ] Update stock (product detail).
 - [x] Operations: buy stock.
-- [ ] Operations: sell stock.
+- [x] Operations: sell stock.
 - [ ] Operations: cancel sell stock.
 - [x] Save buy stock movement.
 - [ ] Save sell stock movement.
